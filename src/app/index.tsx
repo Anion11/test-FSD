@@ -1,26 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './styles/index.css';
+import { Routing } from '../pages/index';
+import { withProviders } from './providers';
 
-const App = ()=> {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React dev
-        </a>
-      </header>
+    <div className="app">
+      <Routing />
     </div>
   );
-}
+};
 
-export default App;
+export default withProviders(App);
