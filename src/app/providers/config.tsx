@@ -1,5 +1,5 @@
 import { RouteProps } from 'react-router';
-import { TestPage, MainPage } from '@/pages';
+import { TestPage, MainPage } from '../../pages';
 
 export const routeConfig: Record<string, RouteProps> = {
   main: {
