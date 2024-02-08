@@ -1,12 +1,12 @@
-import { Routing } from '../pages/index';
-import { withProviders } from './providers';
+import AppRouter from './providers/app-router';
+import './styles/index.scss';
 
 const App = () => {
   return (
     <div className="app">
-      <Routing />
+      <AppRouter />
     </div>
   );
 };
 
-export default withProviders(App);
+export default App;
