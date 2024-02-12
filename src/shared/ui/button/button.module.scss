@@ -1,0 +1,11 @@
+.uiButton {
+  color: white;
+  background: black;
+  padding: 14px 70px;
+  &--red {
+    background: red;
+  }
+  &--primary {
+    background: blue;
+  }
+}
