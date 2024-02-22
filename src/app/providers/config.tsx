@@ -3,11 +3,10 @@ import { TestPage, MainPage } from '../../pages';
 
 export const routeConfig: Record<string, RouteProps> = {
   main: {
-    path: '/test',
+    path: '/йцу',
     element: <TestPage />,
   },
 
-  // last
   test: {
     path: '/',
     element: <MainPage />,

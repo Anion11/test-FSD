@@ -1,5 +1,4 @@
 import { createStore, combine, createEffect, createEvent } from 'effector';
-import { useStore } from 'effector-react';
 import { normalize, schema } from 'normalizr';
 import { typicodeApi } from '../../../shared/api';
 import type { Task } from '../../../shared/api';
@@ -52,24 +51,6 @@ export const $taskDetailsLoading = getTaskByIdFx.pending;
  * "Список" задач
  */
 export const $tasksList = combine($tasks, (tasks) => Object.values(tasks));
-
-/**
- * Отфильтрованные таски
- * @remark Можно разруливать на уровне эффектов - но тогда нужно подключать дополнительную логику в стор
- * > Например скрывать/показывать таск при `toggleTask` событии
- */
-export const $tasksFiltered = combine(
-  $tasksList,
-  $queryConfig,
-  (tasksList, config) => {
-    return tasksList.filter(
-      (task) =>
-        config.completed === undefined || task.completed === config.completed,
-    );
-  },
-);
-
-export const $tasksListEmpty = $tasksFiltered.map((list) => list.length === 0);
 
 export const events = { setQueryConfig };
 
