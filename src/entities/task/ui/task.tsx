@@ -1,6 +1,12 @@
 import styles from './task.module.scss';
+interface TaskProp {
+  titleHref: string;
+  data: {
+    title: string;
+  }
+}
 
-const Task = ({ titleHref, data }: any) => {
+const Task = ({ titleHref, data }: TaskProp) => {
   const { title } = data;
 
   return (

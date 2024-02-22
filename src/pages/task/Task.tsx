@@ -1,9 +1,18 @@
-import Task from '../..//entities/task/ui';
+import { getTaskById } from '../../shared/api/typicode';
 
 const TaskPage = () => {
-  return (
-    <Task titleHref='qwe' data={'qwe'} />
-  );
+  const Task = getTaskById( {taskId: 10} );
+  Task.then((val) => {
+    return (
+      <div>
+        <span>
+          {val.data.id}
+        </span>
+      </div>
+    );
+  })
 };
+
+
 
 export default TaskPage;
